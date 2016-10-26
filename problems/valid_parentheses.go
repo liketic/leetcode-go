@@ -27,13 +27,13 @@ func isValid(s string) bool {
 	for _, c := range s {
 		if c == '[' || c == '(' || c == '{' {
 			stack = append(stack, c)
-		} else {
-			if n := len(stack); n > 0 && stack[n-1] == match(c) {
-				stack = stack[:n-1]
-			} else {
-				return false
-			}
+			continue
 		}
+		if n := len(stack); n > 0 && stack[n-1] == match(c) {
+			stack = stack[:n-1]
+			continue
+		}
+		return false
 	}
 	return len(stack) == 0
 }
