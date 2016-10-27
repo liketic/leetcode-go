@@ -11,18 +11,20 @@ package main
 import "fmt"
 
 func isPalindrome(x int) bool {
-	if x < 0 {
-		return false
+	if x < 10 {
+		return x >= 0
 	}
-	digits := []int{}
-	for x > 0 {
-		digits = append(digits, x%10)
-		x /= 10
+	digitNums := 1
+	for t := x; t >= 10; t /= 10 {
+		digitNums *= 10
 	}
-	for i, j := 0, len(digits)-1; i < j; i, j = i+1, j-1 {
-		if digits[i] != digits[j] {
+
+	for digitNums > 0 {
+		if x%10 != (x/digitNums)%10 {
 			return false
 		}
+		digitNums /= 100
+		x /= 10
 	}
 	return true
 }
