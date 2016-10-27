@@ -11,7 +11,10 @@
 //
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func reverse(x int) int {
 	if x == 0 {
@@ -29,12 +32,12 @@ func reverse(x int) int {
 	}
 	var r int64 = 0
 	for i := 0; i < len(list); i++ {
-		r = r*(int64(10)) + list[i]
+		r = r*10 + list[i]
 	}
 	if !positive {
 		r *= -1
 	}
-	if r > ((1<<31)-1) || r < -(1<<31) {
+	if r > math.MaxInt32 || r < math.MinInt32 {
 		return 0
 	}
 	return int(r)
