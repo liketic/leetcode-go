@@ -20,9 +20,9 @@ func reverse(x int) int {
 	if x == 0 {
 		return 0
 	}
-	positive := true
+	factor := 1
 	if x < 0 {
-		positive = false
+		factor = -1
 		x = -x
 	}
 	list := []int64{}
@@ -34,9 +34,7 @@ func reverse(x int) int {
 	for i := 0; i < len(list); i++ {
 		r = r*10 + list[i]
 	}
-	if !positive {
-		r *= -1
-	}
+	r *= factor
 	if r > math.MaxInt32 || r < math.MinInt32 {
 		return 0
 	}
