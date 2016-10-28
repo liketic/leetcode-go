@@ -33,9 +33,8 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		if l1.Next == nil {
 			l1.Next = l2.Next
 			break
-		} else {
-			l1 = l1.Next
 		}
+		l1 = l1.Next
 		if l2.Next == nil {
 			break
 		}
