@@ -30,7 +30,7 @@ func reverse(x int) int {
 		list = append(list, int64(x%10))
 		x /= 10
 	}
-	var r int64 = 0
+	var r int64
 	for i := 0; i < len(list); i++ {
 		r = r*10 + list[i]
 	}

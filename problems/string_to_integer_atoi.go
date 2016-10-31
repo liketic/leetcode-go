@@ -38,7 +38,7 @@ func myAtoi(str string) int {
 	} else if str[0] == '+' {
 		str = str[1:]
 	}
-	var num int64 = 0
+	var num int64
 	for _, c := range str {
 		v, err := strconv.Atoi(string(c))
 		if err != nil {
