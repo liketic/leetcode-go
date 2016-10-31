@@ -20,11 +20,10 @@ package main
 import "fmt"
 
 func missingNumber(nums []int) int {
-	sum := 0
-	for _, x := range nums {
-		sum += x
+	sum, n := 0, len(nums)
+	for i := 0; i < n; i++ {
+		sum += nums[i]
 	}
-	n := len(nums)
 	return n*(n+1)/2 - sum
 }
 

@@ -17,8 +17,8 @@ package main
 import "fmt"
 
 func isUgly(num int) bool {
-	if num <= 1 {
-		return num == 1
+	if num < 1 {
+		return false
 	}
 	for num%2 == 0 {
 		num /= 2

@@ -26,8 +26,7 @@
 package main
 
 func searchMatrix(matrix [][]int, target int) bool {
-	r := 0
-	c := len(matrix[0]) - 1
+	r, c := 0, len(matrix[0])-1
 
 	for r < len(matrix) && c >= 0 {
 		if matrix[r][c] == target {
