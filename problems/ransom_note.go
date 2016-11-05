@@ -22,7 +22,7 @@ import "fmt"
 func canConstruct(ransomNote string, magazine string) bool {
 	idx := make([]int, 26)
 	for _, c := range ransomNote {
-		idx[int(c-'a')]++
+		idx[c-'a']++
 	}
 	for _, c := range magazine {
 		idx[c-'a']--
