@@ -24,8 +24,8 @@ package main
 
 import "fmt"
 
-func distance(x1, y1, x2, y2 int) int {
-	return (x1-x2)*(x1-x2) + (y1-y2)*(y1-y2)
+func distance(p [][]int, i, j int) int {
+	return (p[i][0]-p[j][0])*(p[i][0]-p[j][0]) + (p[i][1]-p[j][1])*(p[i][1]-p[j][1])
 }
 
 func numberOfBoomerangs(points [][]int) int {
@@ -35,13 +35,13 @@ func numberOfBoomerangs(points [][]int) int {
 	for i := 0; i < n; i++ {
 		for j := i + 1; j < n; j++ {
 			for k := j + 1; k < n; k++ {
-				if distance(points[i][0], points[i][1], points[j][0], points[j][1]) == distance(points[i][0], points[i][1], points[k][0], points[k][1]) {
+				if distance(points, i, j) == distance(points, i, k) {
 					r++
 				}
-				if distance(points[j][0], points[j][1], points[i][0], points[i][1]) == distance(points[j][0], points[j][1], points[k][0], points[k][1]) {
+				if distance(points, i, j) == distance(points, j, k) {
 					r++
 				}
-				if distance(points[k][0], points[k][1], points[i][0], points[i][1]) == distance(points[j][0], points[j][1], points[k][0], points[k][1]) {
+				if distance(points, i, k) == distance(points, j, k) {
 					r++
 				}
 			}
