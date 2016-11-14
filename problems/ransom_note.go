@@ -17,7 +17,9 @@
 //
 package main
 
-import "fmt"
+import (
+	"github.com/smartystreets/assertions"
+)
 
 func canConstruct(ransomNote string, magazine string) bool {
 	idx := make([]int, 26)
@@ -36,5 +38,5 @@ func canConstruct(ransomNote string, magazine string) bool {
 }
 
 func main() {
-	fmt.Println(canConstruct("aa", "aab"))
+	assertions.ShouldBeTrue(canConstruct("aa", "aab"))
 }

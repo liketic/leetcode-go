@@ -20,7 +20,7 @@ func reverse(x int) int {
 	if x == 0 {
 		return 0
 	}
-	factor := 1
+	var factor int64 = 1
 	if x < 0 {
 		factor = -1
 		x = -x
